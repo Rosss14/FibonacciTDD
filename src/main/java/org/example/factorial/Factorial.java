@@ -5,7 +5,7 @@ package org.example.factorial;
  */
 public class Factorial {
     public long compute(long value) {
-        long result = 0;
+        long result;
         if (value == 0 || value == 1) {
             result = 1;
         } else {

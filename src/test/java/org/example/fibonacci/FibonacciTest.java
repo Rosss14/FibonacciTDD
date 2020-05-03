@@ -1,10 +1,10 @@
 package org.example.fibonacci;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Unit test for class Fibonacci
@@ -21,7 +21,7 @@ public class FibonacciTest {
      */
     Fibonacci fibonacci = null;
 
-    @Before
+    @BeforeEach
     public void init(){
         fibonacci = new Fibonacci();
     }
@@ -58,7 +58,7 @@ public class FibonacciTest {
         assertEquals(expectedValue,actualValue);
     }
 
-    @After
+    @AfterEach
     public void fin(){
         fibonacci = null;
     }

@@ -1,12 +1,10 @@
 package org.example.factorial;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.example.factorial.Factorial;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * Unit test for class Factorial.
@@ -22,7 +20,7 @@ public class FactorialTest
      */
     Factorial factorial = null;
 
-    @Before
+    @BeforeEach
     public void initialize(){
         factorial = new Factorial();
     }
@@ -67,7 +65,7 @@ public class FactorialTest
         assertEquals(expectedValue,actualValue);
     }
 
-    @After
+    @AfterEach
     public void finish(){
         factorial = null;
     }

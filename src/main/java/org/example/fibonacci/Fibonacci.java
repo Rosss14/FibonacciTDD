@@ -2,7 +2,7 @@ package org.example.fibonacci;
 
 public class Fibonacci {
     public long fib(long index){
-        long result = 0;
+        long result;
         if (index==1||index==2){
             result=1;
         }else{
