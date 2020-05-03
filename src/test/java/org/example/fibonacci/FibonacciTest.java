@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * Unit test for class Fibonacci
@@ -18,6 +19,7 @@ public class FibonacciTest {
      * 2 -> 1
      * 4 -> 3
      * 6 -> 8
+     * -1 -> IndexOutOfBoundsException
      */
     Fibonacci fibonacci = null;
 
@@ -56,6 +58,11 @@ public class FibonacciTest {
         //Fibonacci fibonacci = new Fibonacci();
         long actualValue=fibonacci.fib(6);
         assertEquals(expectedValue,actualValue);
+    }
+
+    @Test
+    public void shouldNegativeIndexOr0RaiseAnException(){
+        assertThrows(IndexOutOfBoundsException.class,()-> fibonacci.fib(-1));
     }
 
     @AfterEach
