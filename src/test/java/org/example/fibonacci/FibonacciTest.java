@@ -29,39 +29,35 @@ public class FibonacciTest {
     }
 
     @Test
-    public void shouldThe1stElementOfFibonacciSequenceBe1(){
+    public void shouldThe1stElementRegardlessOfRateValueBe1(){
         long expectedValue = 1;
-        //Fibonacci fibonacci = new Fibonacci();
         long actualValue=fibonacci.compute(1,5);
         assertEquals(expectedValue,actualValue);
     }
 
     @Test
-    public void shouldThe2ndElementOfFibonacciSequenceBe1(){
+    public void shouldThe2ndElementRegardlessOfRateValueBe1(){
         long expectedValue = 1;
-        //Fibonacci fibonacci = new Fibonacci();
         long actualValue=fibonacci.compute(2,3);
         assertEquals(expectedValue,actualValue);
     }
 
     @Test
-    public void shouldThe4thElementOfFibonacciSequenceBe3(){
+    public void shouldThe4thElementWithRate1Be3(){
         long expectedValue = 3;
-        //Fibonacci fibonacci = new Fibonacci();
         long actualValue=fibonacci.compute(4,1);
         assertEquals(expectedValue,actualValue);
     }
 
     @Test
-    public void shouldThe6thElementOfFibonacciSequenceBe8(){
+    public void shouldThe5thElementWithRate3Be8(){
         long expectedValue = 19;
-        //Fibonacci fibonacci = new Fibonacci();
         long actualValue=fibonacci.compute(5,3);
         assertEquals(expectedValue,actualValue);
     }
 
     @Test
-    public void shouldNegativeParametersOr0RaiseAnException(){
+    public void shouldOutOfRangeParametersRaiseAnException(){
         //Check whether value of 'index' in the admitted range is assured
         assertThrows(IndexOutOfBoundsException.class,()-> fibonacci.compute(-1,3));
         assertThrows(IndexOutOfBoundsException.class,()-> fibonacci.compute(41,3));
