@@ -6,14 +6,16 @@ package org.example.fibonacci;
  */
 
 public class Fibonacci {
-    public long fib(long index){
+    public long compute(long index, long rate){
         long result;
-        if (index==1||index==2){
-            result=1;
-        }else if(index>2){
-            result=fib(index-1)+fib(index-2);
-        }else{
-            throw new IndexOutOfBoundsException("The index must be a positive integer");
+        if (index>0 && index<=40 && rate>0 && rate <= 5){
+            if (index == 1 || index == 2) {
+                result = 1;
+            } else { // index > 2;
+                result = compute(index - 1, rate) + (rate * compute(index - 2, rate));
+            }
+        }else {
+            throw new IndexOutOfBoundsException("The index must be an integer in (0,40] and rate must be an integer in (0,5]");
         }
         return result;
     }
